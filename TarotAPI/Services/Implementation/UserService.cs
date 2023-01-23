@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TarotAPI.Context;
+using TarotAPI.Data;
 using TarotAPI.Models;
 using TarotAPI.Services.Contract;
 
@@ -7,9 +7,9 @@ namespace TarotAPI.Services.Implementation
 {
     public class UserService : IUserService
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UserService(AppDbContext context)
+        public UserService(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nS8fofTMZ5mykg5JkJ8TyiXuSgE/k6RsnnbgSNVBnXFzm61Jkhe7hmjXRAGkj8Dfry1YtNjJdZjRHNUFiZ/I/w==",
+  "dgSpecHash": "ORB05QU2mvfTaBCx6od/EFxOc+Oq+hBYkcMGnKImS8Ri7fmbppdT2JvEnrzqexNo7MxVTxCGxLti9iIQmQYVoA==",
   "success": true,
-  "projectFilePath": "D:\\Dev\\Stack\\TarotApp\\TarotAPI\\TarotAPI\\TarotAPI.csproj",
+  "projectFilePath": "D:\\Dev\\Projets\\TarotAPI\\TarotAPI\\TarotAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mc_s1\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\mc_s1\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

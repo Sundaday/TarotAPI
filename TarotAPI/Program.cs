@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TarotAPI.Context;
+using TarotAPI.Data;
 using TarotAPI.Services.Contract;
 using TarotAPI.Services.Implementation;
 using TarotAPI.Utilities;
@@ -18,7 +18,7 @@ builder.Services.AddScoped<ICharacterService, CharacterService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });

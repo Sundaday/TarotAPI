@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TarotAPI.Context;
+using TarotAPI.Data;
 using TarotAPI.Models;
 using TarotAPI.Services.Contract;
 
@@ -7,9 +7,9 @@ namespace TarotAPI.Services.Implementation
 {
     public class CharacterService : ICharacterService
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CharacterService(AppDbContext context)
+        public CharacterService(ApplicationDbContext context)
         {
             _context = context;
         }
