@@ -27,7 +27,6 @@ namespace TarotAPI.Controllers
             _mapper = mapper;
         }
 
-        #region GetTeamListWithCharacters
         [HttpGet("WithCharacters")]
         public async Task<IActionResult> GetTeamListWithCharacters(int id)
         {
@@ -44,17 +43,15 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
-        #endregion
 
-        #region GetTeamList
         [HttpGet]
         public async Task<IActionResult> GetTeamList()
         {
@@ -71,17 +68,15 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
-        #endregion
 
-        #region CreateTeam
         [HttpPost]
         public async Task<IActionResult> CreateTeam(CreateTeamDto request)
         {
@@ -107,17 +102,15 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "User cannot be created";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
-        #endregion
 
-        #region UpdateTeam
         [HttpPut]
         public async Task<IActionResult> UpdateTeam (TeamDto request)
         {
@@ -143,14 +136,13 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "User cannot be updated";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
-        #endregion
     }
 }

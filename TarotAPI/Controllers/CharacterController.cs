@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TarotAPI.DTOs;
 using TarotAPI.Models;
 using TarotAPI.Services.Contract;
-using TarotAPI.Services.Implementation;
 using TarotAPI.Utilities;
 
 namespace TarotAPI.Controllers
@@ -38,12 +36,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
     }

@@ -38,12 +38,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
 
@@ -63,12 +63,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                    return StatusCode(StatusCodes.Status200OK, responseApi);
+                    return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
 
@@ -88,12 +88,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
 
@@ -113,12 +113,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "No Data";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
 
@@ -143,12 +143,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "User could not be created";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
 
@@ -173,12 +173,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "User could not be edited";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
 
@@ -198,12 +198,12 @@ namespace TarotAPI.Controllers
                 {
                     responseApi.Msg = "User not found";
                 }
-                return StatusCode(StatusCodes.Status200OK, responseApi);
+                return Ok(responseApi);
             }
             catch (Exception ex)
             {
                 responseApi.Msg = ex.Message;
-                return StatusCode(StatusCodes.Status500InternalServerError, responseApi);
+                return BadRequest(responseApi);
             }
         }
     }
