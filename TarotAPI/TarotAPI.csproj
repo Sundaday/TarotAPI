@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -20,6 +20,10 @@
   <ItemGroup>
     <Folder Include="DTOs\Delete\" />
     <Folder Include="DTOs\Put\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TarotLibrary\TarotDTO.csproj" />
   </ItemGroup>
 
 </Project>

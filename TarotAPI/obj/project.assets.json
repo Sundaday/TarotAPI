@@ -1271,6 +1271,16 @@
             "rid": "win"
           }
         }
+      },
+      "TarotDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TarotDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TarotDTO.dll": {}
+        }
       }
     }
   },
@@ -3984,6 +3994,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "TarotDTO/1.0.0": {
+      "type": "project",
+      "path": "../TarotLibrary/TarotDTO.csproj",
+      "msbuildProject": "../TarotLibrary/TarotDTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3992,7 +4007,8 @@
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "TarotDTO >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4021,7 +4037,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Dev\\Projets\\TarotAPI\\TarotLibrary\\TarotDTO.csproj": {
+              "projectPath": "D:\\Dev\\Projets\\TarotAPI\\TarotLibrary\\TarotDTO.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

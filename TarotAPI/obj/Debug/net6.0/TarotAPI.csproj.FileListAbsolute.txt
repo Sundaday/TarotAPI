@@ -176,3 +176,5 @@ D:\Dev\Projets\TarotAPI\TarotAPI\obj\Debug\net6.0\refint\TarotAPI.dll
 D:\Dev\Projets\TarotAPI\TarotAPI\obj\Debug\net6.0\TarotAPI.pdb
 D:\Dev\Projets\TarotAPI\TarotAPI\obj\Debug\net6.0\TarotAPI.genruntimeconfig.cache
 D:\Dev\Projets\TarotAPI\TarotAPI\obj\Debug\net6.0\ref\TarotAPI.dll
+D:\Dev\Projets\TarotAPI\TarotAPI\bin\Debug\net6.0\TarotLibrary.dll
+D:\Dev\Projets\TarotAPI\TarotAPI\bin\Debug\net6.0\TarotLibrary.pdb

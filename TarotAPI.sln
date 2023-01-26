@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarotAPI", "TarotAPI\TarotAPI.csproj", "{F535A7F2-1FDC-4350-9AB2-C62512C654D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarotAPI", "TarotAPI\TarotAPI.csproj", "{F535A7F2-1FDC-4350-9AB2-C62512C654D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarotDTO", "TarotLibrary\TarotDTO.csproj", "{24955F2C-3572-44E9-89EB-CAA1D7B4EB5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarotModels", "TarotModels\TarotModels.csproj", "{D864F9B6-0EEE-42A1-92BD-224F20731CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarotServices", "TarotServices\TarotServices.csproj", "{2BE25503-D209-4FD2-BFFB-99752D414ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarotAutoMapper", "TarotAutoMapper\TarotAutoMapper.csproj", "{63222955-051D-4957-8505-BC2E766D55C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{F535A7F2-1FDC-4350-9AB2-C62512C654D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F535A7F2-1FDC-4350-9AB2-C62512C654D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F535A7F2-1FDC-4350-9AB2-C62512C654D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24955F2C-3572-44E9-89EB-CAA1D7B4EB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24955F2C-3572-44E9-89EB-CAA1D7B4EB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24955F2C-3572-44E9-89EB-CAA1D7B4EB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24955F2C-3572-44E9-89EB-CAA1D7B4EB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D864F9B6-0EEE-42A1-92BD-224F20731CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D864F9B6-0EEE-42A1-92BD-224F20731CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D864F9B6-0EEE-42A1-92BD-224F20731CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D864F9B6-0EEE-42A1-92BD-224F20731CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE25503-D209-4FD2-BFFB-99752D414ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BE25503-D209-4FD2-BFFB-99752D414ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BE25503-D209-4FD2-BFFB-99752D414ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BE25503-D209-4FD2-BFFB-99752D414ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63222955-051D-4957-8505-BC2E766D55C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63222955-051D-4957-8505-BC2E766D55C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63222955-051D-4957-8505-BC2E766D55C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63222955-051D-4957-8505-BC2E766D55C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
