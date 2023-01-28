@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TarotAPI.DTOs;
 using TarotAPI.Models;
+using TarotAPI.Repository.Interface;
 using TarotAPI.Services.Contract;
 using TarotAPI.Utilities;
 
@@ -11,10 +12,10 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-        private readonly ICharacterService _characterService;
+        private readonly ICharacterRepository _characterService;
         private readonly IMapper _mapper;
 
-        public CharacterController(ICharacterService characterService, IMapper mapper)
+        public CharacterController(ICharacterRepository characterService, IMapper mapper)
         {
             _characterService = characterService;
             _mapper = mapper;

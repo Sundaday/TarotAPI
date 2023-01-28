@@ -13,12 +13,12 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UserController(IUserService userService, IMapper mapper)
+        public UserController(IUserRepository userRepository, IMapper mapper)
         {
-            _userService = userService;
+            _userRepository = userRepository;
             _mapper = mapper;
         }
 

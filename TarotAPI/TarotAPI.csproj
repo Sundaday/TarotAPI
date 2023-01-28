@@ -23,7 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TarotAutoMapper\TarotAutoMapper.csproj" />
     <ProjectReference Include="..\TarotLibrary\TarotDTO.csproj" />
+    <ProjectReference Include="..\TarotModels\TarotModels.csproj" />
+    <ProjectReference Include="..\TarotServices\TarotServices.csproj" />
   </ItemGroup>
 
 </Project>

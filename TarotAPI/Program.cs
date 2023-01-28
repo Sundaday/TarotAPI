@@ -3,6 +3,7 @@ using TarotAPI.Data;
 using TarotAPI.Services.Contract;
 using TarotAPI.Services.Implementation;
 using TarotAPI.Utilities;
+using TarotDTO;
 
 var builder = WebApplication.CreateBuilder(args);
 

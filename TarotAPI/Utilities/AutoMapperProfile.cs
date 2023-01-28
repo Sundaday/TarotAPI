@@ -5,7 +5,7 @@ using TarotAPI.DTOs.Get;
 using TarotAPI.DTOs.Post;
 using TarotAPI.Models;
 
-namespace TarotAPI.Utilities
+namespace TarotDTO
 {
     public class AutoMapperProfile : Profile
     {

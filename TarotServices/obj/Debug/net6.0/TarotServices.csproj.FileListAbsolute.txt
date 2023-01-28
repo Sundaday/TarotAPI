@@ -1,0 +1,12 @@
+D:\Dev\Projets\TarotAPI\TarotServices\bin\Debug\net6.0\TarotServices.deps.json
+D:\Dev\Projets\TarotAPI\TarotServices\bin\Debug\net6.0\TarotServices.dll
+D:\Dev\Projets\TarotAPI\TarotServices\bin\Debug\net6.0\TarotServices.pdb
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.csproj.AssemblyReference.cache
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.AssemblyInfoInputs.cache
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.AssemblyInfo.cs
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.csproj.CoreCompileInputs.cache
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.dll
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\refint\TarotServices.dll
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\TarotServices.pdb
+D:\Dev\Projets\TarotAPI\TarotServices\obj\Debug\net6.0\ref\TarotServices.dll

@@ -1272,14 +1272,47 @@
           }
         }
       },
+      "TarotAutoMapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TarotAutoMapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TarotAutoMapper.dll": {}
+        }
+      },
       "TarotDTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "12.0.0"
+        },
         "compile": {
           "bin/placeholder/TarotDTO.dll": {}
         },
         "runtime": {
           "bin/placeholder/TarotDTO.dll": {}
+        }
+      },
+      "TarotModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TarotModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TarotModels.dll": {}
+        }
+      },
+      "TarotServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TarotServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TarotServices.dll": {}
         }
       }
     }
@@ -3995,10 +4028,25 @@
         "version.txt"
       ]
     },
+    "TarotAutoMapper/1.0.0": {
+      "type": "project",
+      "path": "../TarotAutoMapper/TarotAutoMapper.csproj",
+      "msbuildProject": "../TarotAutoMapper/TarotAutoMapper.csproj"
+    },
     "TarotDTO/1.0.0": {
       "type": "project",
       "path": "../TarotLibrary/TarotDTO.csproj",
       "msbuildProject": "../TarotLibrary/TarotDTO.csproj"
+    },
+    "TarotModels/1.0.0": {
+      "type": "project",
+      "path": "../TarotModels/TarotModels.csproj",
+      "msbuildProject": "../TarotModels/TarotModels.csproj"
+    },
+    "TarotServices/1.0.0": {
+      "type": "project",
+      "path": "../TarotServices/TarotServices.csproj",
+      "msbuildProject": "../TarotServices/TarotServices.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4008,7 +4056,10 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.2",
       "Swashbuckle.AspNetCore >= 6.5.0",
-      "TarotDTO >= 1.0.0"
+      "TarotAutoMapper >= 1.0.0",
+      "TarotDTO >= 1.0.0",
+      "TarotModels >= 1.0.0",
+      "TarotServices >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4038,8 +4089,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Dev\\Projets\\TarotAPI\\TarotAutoMapper\\TarotAutoMapper.csproj": {
+              "projectPath": "D:\\Dev\\Projets\\TarotAPI\\TarotAutoMapper\\TarotAutoMapper.csproj"
+            },
             "D:\\Dev\\Projets\\TarotAPI\\TarotLibrary\\TarotDTO.csproj": {
               "projectPath": "D:\\Dev\\Projets\\TarotAPI\\TarotLibrary\\TarotDTO.csproj"
+            },
+            "D:\\Dev\\Projets\\TarotAPI\\TarotModels\\TarotModels.csproj": {
+              "projectPath": "D:\\Dev\\Projets\\TarotAPI\\TarotModels\\TarotModels.csproj"
+            },
+            "D:\\Dev\\Projets\\TarotAPI\\TarotServices\\TarotServices.csproj": {
+              "projectPath": "D:\\Dev\\Projets\\TarotAPI\\TarotServices\\TarotServices.csproj"
             }
           }
         }

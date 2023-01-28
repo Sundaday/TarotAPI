@@ -1,0 +1,12 @@
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\bin\Debug\net6.0\TarotAutoMapper.deps.json
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\bin\Debug\net6.0\TarotAutoMapper.dll
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\bin\Debug\net6.0\TarotAutoMapper.pdb
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.csproj.AssemblyReference.cache
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.AssemblyInfoInputs.cache
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.AssemblyInfo.cs
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.csproj.CoreCompileInputs.cache
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.dll
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\refint\TarotAutoMapper.dll
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\TarotAutoMapper.pdb
+D:\Dev\Projets\TarotAPI\TarotAutoMapper\obj\Debug\net6.0\ref\TarotAutoMapper.dll

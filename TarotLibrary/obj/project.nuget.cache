@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "grtOnOV5/yuuZEMuxyUyPmXBWOX3eIc5YaRYJX+3LRhC9T3Qj9WpplxqkLn1wx8OsvYUI7HDhhEAFfKFTc1O6Q==",
+  "dgSpecHash": "AjLnHlulUwxDYQqqvgup0Hm6k0a7IltDoUIL3KvTLPVpCvdFWWVOk0PTh0TzsHpQTYdW9HhVBZA6vdtLalG83g==",
   "success": true,
   "projectFilePath": "D:\\Dev\\Projets\\TarotAPI\\TarotLibrary\\TarotDTO.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mc_s1\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\mc_s1\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
