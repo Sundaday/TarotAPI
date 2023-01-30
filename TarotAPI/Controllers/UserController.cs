@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TarotAPI.DTOs;
 using TarotAPI.DTOs.Get;
 using TarotAPI.Models;
-using TarotAPI.Services.Contract;
+using TarotAPI.Repository.Interface;
 using TarotAPI.Utilities;
 
 namespace TarotAPI.Controllers
@@ -28,7 +28,7 @@ namespace TarotAPI.Controllers
             ResponseApi<List<UserDto>> responseApi = new ResponseApi<List<UserDto>>() { Status = false, Msg = "" };
             try
             {
-                List<User> userList = await _userService.GetUserList();
+                List<User> userList = await _userRepository.GetUserList();
                 if (userList.Count > 0)
                 {
                     List<UserDto> dtoList = _mapper.Map<List<UserDto>>(userList);
@@ -53,7 +53,7 @@ namespace TarotAPI.Controllers
             ResponseApi<UserDto> responseApi = new ResponseApi<UserDto>() { Status = false, Msg = "" };
             try
             {
-                User user = await _userService.GetUserById(id);
+                User user = await _userRepository.GetUserById(id);
                 if (id != 0)
                 {
                     UserDto dto = _mapper.Map<UserDto>(user);
@@ -78,7 +78,7 @@ namespace TarotAPI.Controllers
             ResponseApi<List<GetUserWithGuildDto>> responseApi = new ResponseApi<List<GetUserWithGuildDto>>() { Status = false, Msg = "" };
             try
             {
-                List<User> userList = await _userService.GetUserListWithGuild();
+                List<User> userList = await _userRepository.GetUserListWithGuild();
                 if (userList.Count > 0)
                 {
                     List<GetUserWithGuildDto> dtoList = _mapper.Map<List<GetUserWithGuildDto>>(userList);
@@ -103,7 +103,7 @@ namespace TarotAPI.Controllers
             ResponseApi<GetUserWithGuildDto> responseApi = new ResponseApi<GetUserWithGuildDto>() { Status = false, Msg = "" };
             try
             {
-                User user = await _userService.GetUserByIdWithGuild(id);
+                User user = await _userRepository.GetUserByIdWithGuild(id);
                 if (id != 0)
                 {
                     GetUserWithGuildDto dto = _mapper.Map<GetUserWithGuildDto>(user);
@@ -129,7 +129,7 @@ namespace TarotAPI.Controllers
             try
             {
                 User _model = _mapper.Map<User>(request);
-                User _userCreated = await _userService.AddUser(_model);
+                User _userCreated = await _userRepository.AddUser(_model);
                 if (_userCreated.UserId != 0)
                 {
                     responseApi = new ResponseApi<GetUserWithGuildDto>
@@ -159,7 +159,7 @@ namespace TarotAPI.Controllers
             try
             {
                 User _model = _mapper.Map<User>(request);
-                User _userEdited = await _userService.UpdateUser(_model);
+                User _userEdited = await _userRepository.UpdateUser(_model);
                 if (_userEdited.UserId != 0)
                 {
                     responseApi = new ResponseApi<GetUserWithGuildDto>
@@ -188,8 +188,8 @@ namespace TarotAPI.Controllers
             ResponseApi<bool> responseApi = new ResponseApi<bool>() { Status = false, Msg = "" };
             try
             {
-                User _userFound = await _userService.GetUserByIdWithGuild(id);
-                bool deleted = await _userService.DeleteUser(_userFound);
+                User _userFound = await _userRepository.GetUserByIdWithGuild(id);
+                bool deleted = await _userRepository.DeleteUser(_userFound);
                 if (deleted)
                 {
                     responseApi = new ResponseApi<bool> { Status = true, Msg = "Ok" };

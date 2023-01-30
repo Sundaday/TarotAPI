@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TarotAPI.DTOs;
 using TarotAPI.Models;
-using TarotAPI.Services.Contract;
+using TarotAPI.Repository.Interface;
 using TarotAPI.Utilities;
 
 namespace TarotAPI.Controllers
@@ -12,12 +12,12 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class GuildController : ControllerBase
     {
-        private readonly IGuildService _guildService;
+        private readonly IGuildRepository _guildRepository;
         private readonly IMapper _mapper;
 
-        public GuildController(IGuildService guildService, IMapper mapper)
+        public GuildController(IGuildRepository guildRepository, IMapper mapper)
         {
-            _guildService = guildService;
+            _guildRepository = guildRepository;
             _mapper = mapper;
         }
 
@@ -28,7 +28,7 @@ namespace TarotAPI.Controllers
             ResponseApi<List<GuildDto>> responseApi = new ResponseApi<List<GuildDto>>() { Status = false, Msg = "" };
             try
             {
-                List<Guild> guildList = await _guildService.GetGuilds();
+                List<Guild> guildList = await _guildRepository.GetGuilds();
                 if (guildList.Count > 0)
                 {
                     List<GuildDto> dtoList = _mapper.Map<List<GuildDto>>(guildList);

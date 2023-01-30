@@ -6,8 +6,8 @@ using TarotAPI.DTOs;
 using TarotAPI.DTOs.Get;
 using TarotAPI.DTOs.Post;
 using TarotAPI.Models;
-using TarotAPI.Services.Contract;
-using TarotAPI.Services.Implementation;
+using TarotAPI.Repository.Interface;
+using TarotAPI.Repository.Implementation;
 using TarotAPI.Utilities;
 
 namespace TarotAPI.Controllers
@@ -16,14 +16,14 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-        private readonly ITeamService _teamService;
-        private readonly IUserService _userService;
+        private readonly ITeamRepository _teamRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public TeamController(ITeamService teamService, IUserService userService, IMapper mapper)
+        public TeamController(ITeamRepository teamRepository, IUserRepository userRepository, IMapper mapper)
         {
-            _teamService = teamService;
-            _userService = userService;
+            _teamRepository = teamRepository;
+            _userRepository = userRepository;
             _mapper = mapper;
         }
 
@@ -33,7 +33,7 @@ namespace TarotAPI.Controllers
             ResponseApi<List<GetTeamWithCharactersDto>> responseApi = new ResponseApi<List<GetTeamWithCharactersDto>>() { Status = false, Msg = "" };
             try
             {
-                List<Team> teamList = await _teamService.GetTeamsWithCharactersList(id);
+                List<Team> teamList = await _teamRepository.GetTeamsWithCharactersList(id);
                 if (teamList.Count > 0)
                 {
                     List<GetTeamWithCharactersDto> dtoList = _mapper.Map<List<GetTeamWithCharactersDto>>(teamList);
@@ -58,7 +58,7 @@ namespace TarotAPI.Controllers
             ResponseApi<List<TeamDto>> responseApi = new ResponseApi<List<TeamDto>>() { Status = false, Msg = "" };
             try
             {
-                List<Team> teamList = await _teamService.GetTeamsList();
+                List<Team> teamList = await _teamRepository.GetTeamsList();
                 if (teamList.Count > 0)
                 {
                     List<TeamDto> dtoList = _mapper.Map<List<TeamDto>>(teamList);
@@ -83,11 +83,11 @@ namespace TarotAPI.Controllers
             ResponseApi<CreateTeamDto> responseApi = new ResponseApi<CreateTeamDto>() { Status = false, Msg = "" };
             try
             {
-                User user = await _userService.GetUserById(request.UserId);
+                User user = await _userRepository.GetUserById(request.UserId);
                 if (user != null)
                 {
                     Team _model = _mapper.Map<Team>(request);
-                    Team _teamCreated = await _teamService.CreateTeam(_model);
+                    Team _teamCreated = await _teamRepository.CreateTeam(_model);
                     if (_teamCreated.TeamId != 0)
                     {
                         responseApi = new ResponseApi<CreateTeamDto>
@@ -117,11 +117,11 @@ namespace TarotAPI.Controllers
             ResponseApi<TeamDto> responseApi = new ResponseApi<TeamDto>() { Status = false, Msg = "" };
             try
             {
-                User user = await _userService.GetUserById(request.UserId);
+                User user = await _userRepository.GetUserById(request.UserId);
                 if(user != null)
                 {
                     Team _model = _mapper.Map<Team>(request);
-                    Team _teamUpdated = await _teamService.UpdateTeam(_model);
+                    Team _teamUpdated = await _teamRepository.UpdateTeam(_model);
                     if(_teamUpdated.TeamId == _model.TeamId)
                     {
                         responseApi = new ResponseApi<TeamDto>

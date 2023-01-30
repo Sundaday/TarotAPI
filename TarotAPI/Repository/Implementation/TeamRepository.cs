@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TarotAPI.Data;
 using TarotAPI.Models;
-using TarotAPI.Services.Contract;
+using TarotAPI.Repository.Interface;
 
 namespace TarotAPI.Repository.Implementation
 {
-    public class TeamService : ITeamRepository
+    public class TeamRepository : ITeamRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public TeamService(ApplicationDbContext context)
+        public TeamRepository(ApplicationDbContext context)
         {
             _context = context;
         }

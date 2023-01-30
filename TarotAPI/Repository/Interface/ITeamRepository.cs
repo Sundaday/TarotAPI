@@ -1,6 +1,6 @@
 ﻿using TarotAPI.Models;
 
-namespace TarotAPI.Repository.Contract
+namespace TarotAPI.Repository.Interface
 {
     public interface ITeamRepository
     {

@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TarotAPI.Data;
 using TarotAPI.Models;
-using TarotAPI.Services.Contract;
+using TarotAPI.Repository.Interface;
 
 namespace TarotAPI.Repository.Implementation
 {
-    public class CharacterService : ICharacterRepository
+    public class CharacterRepository : ICharacterRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public CharacterService(ApplicationDbContext context)
+        public CharacterRepository(ApplicationDbContext context)
         {
             _context = context;
         }

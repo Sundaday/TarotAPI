@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TarotAPI.Data;
 using TarotAPI.Models;
-using TarotAPI.Services.Contract;
+using TarotAPI.Repository.Interface;
 
 namespace TarotAPI.Repository.Implementation
 {
-    public class GuildService : IGuildRepository
+    public class GuildRepository : IGuildRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public GuildService(ApplicationDbContext context)
+        public GuildRepository(ApplicationDbContext context)
         {
             _context = context;
         }

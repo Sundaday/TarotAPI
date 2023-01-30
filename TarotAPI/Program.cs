@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TarotAPI.Data;
-using TarotAPI.Services.Contract;
-using TarotAPI.Services.Implementation;
+using TarotAPI.Repository.Interface;
+using TarotAPI.Repository.Implementation;
 using TarotAPI.Utilities;
 using TarotDTO;
 
@@ -11,10 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Interface Scoped
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IGuildService, GuildService>();
-builder.Services.AddScoped<ITeamService, TeamService>();
-builder.Services.AddScoped<ICharacterService, CharacterService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IGuildRepository, GuildRepository>();
+builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

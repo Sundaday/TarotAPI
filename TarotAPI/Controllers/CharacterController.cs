@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using TarotAPI.DTOs;
 using TarotAPI.Models;
 using TarotAPI.Repository.Interface;
-using TarotAPI.Services.Contract;
 using TarotAPI.Utilities;
 
 namespace TarotAPI.Controllers
@@ -12,12 +11,12 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-        private readonly ICharacterRepository _characterService;
+        private readonly ICharacterRepository _characterRepository;
         private readonly IMapper _mapper;
 
-        public CharacterController(ICharacterRepository characterService, IMapper mapper)
+        public CharacterController(ICharacterRepository characterRepository, IMapper mapper)
         {
-            _characterService = characterService;
+            _characterRepository = characterRepository;
             _mapper = mapper;
         }
 
@@ -25,7 +24,7 @@ namespace TarotAPI.Controllers
         public async Task<IActionResult> GetCharactersList()
         {
             ResponseApi<List<CharacterDto>> responseApi = new ResponseApi<List<CharacterDto>>() { Status = false, Msg = "" };
-            List<Character> charactersList = await _characterService.GetCharacters();
+            List<Character> charactersList = await _characterRepository.GetCharacters();
             try
             {
                 if (charactersList.Count > 0)
