@@ -1275,6 +1275,11 @@
       "TarotAutoMapper/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "12.0.0",
+          "TarotDTO": "1.0.0",
+          "TarotModels": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/TarotAutoMapper.dll": {}
         },

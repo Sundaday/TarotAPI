@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using System.Globalization;
 using TarotAPI.DTOs;
-using TarotAPI.DTOs.Get;
-using TarotAPI.DTOs.Post;
 using TarotAPI.Models;
 
 namespace TarotDTO

@@ -18,11 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\Delete\" />
-    <Folder Include="DTOs\Put\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TarotAutoMapper\TarotAutoMapper.csproj" />
     <ProjectReference Include="..\TarotLibrary\TarotDTO.csproj" />
     <ProjectReference Include="..\TarotModels\TarotModels.csproj" />
