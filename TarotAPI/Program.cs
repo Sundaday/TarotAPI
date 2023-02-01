@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TarotAPI.Data;
-using TarotAPI.Repository.Interface;
 using TarotAPI.Repository.Implementation;
+using TarotAPI.Repository.Interface;
 using TarotAPI.Utilities;
 using TarotDTO;
 

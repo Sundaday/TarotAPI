@@ -11,10 +11,10 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-        private readonly ICharacterRepository _characterRepository;
+        private readonly IRepository<Character> _characterRepository;
         private readonly IMapper _mapper;
 
-        public CharacterController(ICharacterRepository characterRepository, IMapper mapper)
+        public CharacterController(IRepository<Character> characterRepository, IMapper mapper)
         {
             _characterRepository = characterRepository;
             _mapper = mapper;
@@ -24,7 +24,7 @@ namespace TarotAPI.Controllers
         public async Task<IActionResult> GetCharactersList()
         {
             ResponseApi<List<CharacterDto>> responseApi = new ResponseApi<List<CharacterDto>>() { Status = false, Msg = "" };
-            List<Character> charactersList = await _characterRepository.GetCharacters();
+            List<Character> charactersList = await _characterRepository.GetAll();
             try
             {
                 if (charactersList.Count > 0)

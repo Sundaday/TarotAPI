@@ -5,7 +5,7 @@ using TarotAPI.Repository.Interface;
 
 namespace TarotAPI.Repository.Implementation
 {
-    public class TeamRepository : ITeamRepository
+    public class TeamRepository : IRepository<Team>
     {
         private readonly ApplicationDbContext _context;
 
@@ -14,7 +14,7 @@ namespace TarotAPI.Repository.Implementation
             _context = context;
         }
 
-        public async Task<List<Team>> GetTeamsList()
+        public async Task<IEnumerable<Team>> GetAll()
         {
             try
             {
@@ -24,26 +24,11 @@ namespace TarotAPI.Repository.Implementation
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<List<Team>> GetTeamsWithCharactersList(int id)
-        {
-            try
-            {
-                List<Team> teams = new List<Team>();
-                teams = await _context.Teams
-                    .Where(i => i.UserId == id)
-                    .Include(t => t.Characters)
-                    .ToListAsync();
-                return teams;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public async Task<Team> GetTeamById(int id)
+        public async Task<Team> GetById(int id)
         {
             try
             {
@@ -53,46 +38,51 @@ namespace TarotAPI.Repository.Implementation
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<Team> CreateTeam(Team team)
+        public async Task<Team> Add(Team entity)
         {
             try
             {
-                _context.Teams.Add(team);
+                await _context.Teams.AddAsync(entity);
                 await _context.SaveChangesAsync();
-                return team;
+                return entity;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<Team> UpdateTeam(Team team)
+        public async Task<Team> Update(Team entity)
         {
             try
             {
-                _context.Teams.Update(team);
+                _context.Teams.Update(entity);
                 await _context.SaveChangesAsync();
-                return team;
+                return entity;
+
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<bool> DeleteTeam(Team team)
+        public async Task<bool> Delete(Team entity)
         {
             try
             {
-                _context.Teams.Remove(team);
+                _context.Teams.Remove(entity);
                 await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
     }

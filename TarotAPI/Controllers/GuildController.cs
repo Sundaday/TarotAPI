@@ -12,10 +12,10 @@ namespace TarotAPI.Controllers
     [ApiController]
     public class GuildController : ControllerBase
     {
-        private readonly IGuildRepository _guildRepository;
+        private readonly IRepository<Guild> _guildRepository;
         private readonly IMapper _mapper;
 
-        public GuildController(IGuildRepository guildRepository, IMapper mapper)
+        public GuildController(IRepository<Guild> guildRepository, IMapper mapper)
         {
             _guildRepository = guildRepository;
             _mapper = mapper;
@@ -28,7 +28,7 @@ namespace TarotAPI.Controllers
             ResponseApi<List<GuildDto>> responseApi = new ResponseApi<List<GuildDto>>() { Status = false, Msg = "" };
             try
             {
-                List<Guild> guildList = await _guildRepository.GetGuilds();
+                List<Guild> guildList = await _guildRepository.GetAll();
                 if (guildList.Count > 0)
                 {
                     List<GuildDto> dtoList = _mapper.Map<List<GuildDto>>(guildList);

@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace TarotAPI.Models;
-
-public partial class User
+namespace TarotAPI.Models
 {
-    public int UserId { get; set; }
-
-    public string UserName { get; set; } = null!;
-
-    public DateTime? HireGuild { get; set; }
-
-    public int GuildId { get; set; }
-
-    public virtual Guild Guild { get; set; } = null!;
-
-    public virtual ICollection<Team> Teams { get; } = new List<Team>();
+    public class User
+    {
+        [Key]
+        public int UserId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public DateTime? HireGuild { get; set; }
+        [ForeignKey("Guild")]
+        public int GuildId { get; set; }
+        public Guild? Guild { get; set; }
+        public ICollection<Team> Teams { get; set; } = new List<Team>();
+    }
 }

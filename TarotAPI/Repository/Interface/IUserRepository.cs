@@ -2,14 +2,8 @@
 
 namespace TarotAPI.Repository.Interface
 {
-    public interface IUserRepository
+    internal interface IUserRepository
     {
-        Task<List<User>> GetUserList();
-        Task<User> GetUserById(int id);
-        Task<List<User>> GetUserListWithGuild();
-        Task<User> GetUserByIdWithGuild(int id);
-        Task<User> AddUser (User user);
-        Task<User> UpdateUser (User user);
-        Task<bool> DeleteUser (User user);
+        Task<User> GetByGuild(User user);
     }
 }

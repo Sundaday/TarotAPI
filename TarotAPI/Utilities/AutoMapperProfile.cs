@@ -13,14 +13,14 @@ namespace TarotDTO
         {
             CreateMap<Guild, GuildDto>()
                 .ForMember(destiny =>
-                destiny.GuildCreationDate,
-                opt => opt.MapFrom(origin => origin.GuildCreationDate.Value.ToString("dd/MM/yyyy"))
+                destiny.CreationDate,
+                opt => opt.MapFrom(origin => origin.CreationDate.Value.ToString("dd/MM/yyyy"))
                 );
 
             CreateMap<GuildDto, Guild>()
                 .ForMember(destiny =>
-                destiny.GuildCreationDate,
-                opt => opt.MapFrom(origin => DateTime.ParseExact(origin.GuildCreationDate, "dd/MM/yyyy", CultureInfo.InvariantCulture))
+                destiny.CreationDate,
+                opt => opt.MapFrom(origin => DateTime.ParseExact(origin.CreationDate, "dd/MM/yyyy", CultureInfo.InvariantCulture))
                 );
 
             CreateMap<User, UserDto>();

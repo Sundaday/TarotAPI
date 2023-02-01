@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace TarotAPI.Models;
-
-public partial class Guild
+namespace TarotAPI.Models
 {
-    public int GuildId { get; set; }
-
-    public string GuildName { get; set; } = null!;
-
-    public int GuildRank { get; set; }
-
-    public DateTime? GuildCreationDate { get; set; }
-
-    public virtual ICollection<User> Users { get; } = new List<User>();
+    public class Guild
+    {
+        [Key]
+        public int GuildId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public int Rank { get; set; }
+        public DateTime? CreationDate { get; set; }
+        public ICollection<User> Users { get; } = new HashSet<User>();
+    }
 }

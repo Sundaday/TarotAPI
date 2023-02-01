@@ -5,7 +5,7 @@ using TarotAPI.Repository.Interface;
 
 namespace TarotAPI.Repository.Implementation
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : IRepository<User>, IUserRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -13,20 +13,19 @@ namespace TarotAPI.Repository.Implementation
         {
             _context = context;
         }
-        public async Task<List<User>> GetUserList()
+        public async Task<IEnumerable<User>> GetAll()
         {
             try
             {
-                List<User> users = new List<User>();
-                users = await _context.Users.ToListAsync();
-                return users;
+                return await _context.Users.ToListAsync();
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<User> GetUserById(int id)
+        public async Task<User> GetById(int id)
         {
             try
             {
@@ -36,77 +35,57 @@ namespace TarotAPI.Repository.Implementation
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<List<User>> GetUserListWithGuild()
+        public async Task<User> Add(User entity)
         {
             try
             {
-                List<User> users = new List<User>();
-                users = await _context.Users
-                    .Include(g => g.Guild)
-                    .ToListAsync();
-                return users;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public async Task<User> GetUserByIdWithGuild(int id)
-        {
-            try
-            {
-                User? user = new User();
-                user = await _context.Users
-                    .Include(c => c.Guild)
-                    .FirstOrDefaultAsync(c => c.UserId == id);
-                return user;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public async Task<User> AddUser(User user)
-        {
-            try
-            {
-                _context.Users.Add(user);
+                _context.Users.Add(entity);
                 await _context.SaveChangesAsync();
-                return user;
+                return entity;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<User> UpdateUser(User user)
+        public async Task<User> Update(User entity)
         {
             try
             {
-                _context.Users.Update(user);
+                _context.Users.Update(entity);
                 await _context.SaveChangesAsync();
-                return user;
+                return entity;
+
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
-        public async Task<bool> DeleteUser(User user)
+        public async Task<bool> Delete(User entity)
         {
             try
             {
-                _context.Users.Remove(user);
+                _context.Users.Remove(entity);
                 await _context.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine(ex.Message);
+                return false;
             }
+        }
+
+        public Task<User> GetByGuild(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

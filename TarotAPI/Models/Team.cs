@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace TarotAPI.Models;
-
-public partial class Team
+namespace TarotAPI.Models
 {
-    public int TeamId { get; set; }
-
-    public string TeamName { get; set; } = null!;
-
-    public string TeamDescription { get; set; } = null!;
-
-    public float TeamDamage { get; set; }
-
-    public int UserId { get; set; }
-
-    public virtual User User { get; set; } = null!;
-
-    public virtual ICollection<Character> Characters { get; } = new List<Character>();
+    public class Team
+    {
+        [Key]
+        public int TeamId { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public float Damage { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public User? User { get; set; }
+        public ICollection<Character> Characters { get; } = new List<Character>();
+    }
 }

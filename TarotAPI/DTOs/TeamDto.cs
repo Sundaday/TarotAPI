@@ -5,9 +5,9 @@ namespace TarotAPI.DTOs
     public class TeamDto
     {
         public int TeamId { get; set; }
-        public string? TeamName { get; set; }
-        public string? TeamDescription { get; set; }
-        public float TeamDamage { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public float Damage { get; set; }
         public int UserId { get; set; } = 0;
     }
 }
